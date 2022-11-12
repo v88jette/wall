@@ -30,7 +30,7 @@ CREATE TABLE `posts` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_posts_on_user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,1,'p1','2022-11-01 19:14:58',NULL),(2,1,'p3','2022-11-01 19:14:58',NULL),(3,2,'p2','2022-11-01 19:14:58',NULL),(4,3,'p4','2022-11-01 19:14:58',NULL);
+INSERT INTO `posts` VALUES (1,1,'p1','2022-11-01 19:14:58',NULL),(2,1,'p3','2022-11-01 19:14:58',NULL),(3,2,'p2','2022-11-01 19:14:58',NULL),(4,3,'p4','2022-11-01 19:14:58',NULL),(79,12,'Pls submit your codebase on github','2022-11-12 12:46:11',NULL);
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `replies` (
   PRIMARY KEY (`id`),
   KEY `idx_replies_on_user_id` (`user_id`),
   KEY `idx_replies_on_post_id` (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `replies` (
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
-INSERT INTO `replies` VALUES (1,2,1,'r1','2022-11-01 19:16:20',NULL),(2,2,3,'r4','2022-11-01 19:16:20',NULL),(3,1,2,'r2','2022-11-01 19:16:20',NULL),(4,3,2,'r3','2022-11-01 19:16:20',NULL);
+INSERT INTO `replies` VALUES (1,2,1,'r1','2022-11-01 19:16:20',NULL),(2,2,3,'r4','2022-11-01 19:16:20',NULL),(3,1,2,'r2','2022-11-01 19:16:20',NULL),(4,3,2,'r3','2022-11-01 19:16:20',NULL),(40,1,79,'Done! Sorry I\'m late','2022-11-12 12:47:15',NULL);
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Jette','Dumayas','jd@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 19:12:31',NULL),(2,'Kei','Kishimoto','kk@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 19:12:31',NULL),(3,'Jay','Rogelio','jr@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 19:12:31',NULL),(4,'Justin','Bee','jbee@tes.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 22:41:20',NULL),(5,'Judy','Mariano','jmariano@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 22:43:10',NULL),(6,'Kill','Joy','kj@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 22:48:02',NULL),(7,'Abi','Doe','adoe@tes.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 23:11:36',NULL),(8,'Justin','Mariano','jem@tes.com','28289547219db1c180c15c466f7ab4ac','2022-11-01 23:13:39',NULL),(9,'Michael','Choi','mchoi@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 23:44:19',NULL);
+INSERT INTO `users` VALUES (1,'Jette','Dumayas','jd@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 19:12:31',NULL),(2,'Kei','Kishimoto','kk@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 19:12:31',NULL),(3,'Jay','Rogelio','jr@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 19:12:31',NULL),(4,'Justin','Bee','jbee@tes.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 22:41:20',NULL),(5,'Judy','Mariano','jmariano@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 22:43:10',NULL),(6,'Kill','Joy','kj@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 22:48:02',NULL),(7,'Abi','Doe','adoe@tes.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 23:11:36',NULL),(8,'Justin','Mariano','jem@tes.com','28289547219db1c180c15c466f7ab4ac','2022-11-01 23:13:39',NULL),(9,'Michael','Choi','mchoi@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-01 23:44:19',NULL),(12,'Chirs','Padua','cpadua@test.com','4a89a58be035cc2c98651684d51b3755','2022-11-12 12:43:08',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -111,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-12 11:41:53
+-- Dump completed on 2022-11-12 12:48:03
