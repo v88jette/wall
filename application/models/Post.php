@@ -10,7 +10,7 @@ class Post extends CI_Model {
 	public function get_all_records(){
         $result = ['status' => true, 'result' => null, 'message' => ''];
         try{
-            $query = "SELECT CONCAT(pusers.fname, ' ', pusers.lname) AS author, posts.content, posts.created_at, posts.id, posts.user_id, GROUP_CONCAT(CONCAT(rusers.fname, ' ', rusers.lname),'~~~',replies.content,'~~~',replies.created_at,'~~~',replies.id,'~~~',replies.user_id,'~~~',replies.post_id) AS replies
+            $query = "SELECT CONCAT(pusers.fname, ' ', pusers.lname) AS author, posts.content, DATE_FORMAT(posts.created_at, '%b %d %Y') as created_at, posts.id, posts.user_id, GROUP_CONCAT(CONCAT(rusers.fname, ' ', rusers.lname),'~~~',replies.content,'~~~', DATE_FORMAT(replies.created_at, '%b %d %Y'),'~~~',replies.id,'~~~',replies.user_id,'~~~',replies.post_id) AS replies
             FROM posts
                 LEFT JOIN replies ON posts.id = replies.post_id
                 INNER JOIN users AS pusers ON posts.user_id = pusers.id

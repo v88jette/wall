@@ -14,7 +14,7 @@
 
 foreach($posts['result'] as $post){ ?>
 <div id="post-<?= $post['id'] ?>" class="post">
-    <span>Posted by <strong><?= $post['author'] ?></strong> at <strong><?= $post['created_at'] ?></strong></span>
+    <span>Posted by <strong><?= $this->session->userdata('user_id') == $post['user_id'] ? 'You' : $post['author'] ?></strong> at <strong><?= $post['created_at'] ?></strong></span>
     <p><?= $post['content'] ?></p>
 </div>
 <?php   if ($post['replies'] === null){ 
@@ -26,7 +26,7 @@ foreach($posts['result'] as $post){ ?>
         foreach($replies as $reply){
             $reply = explode('~~~', $reply); ?>
         <div id="reply-<?= $reply[3] ?>" class="reply">
-            <span>Posted by <strong><?= $reply[0] ?></strong> at <strong><?= $reply[2] ?></strong></span>
+            <span>Posted by <strong><?= $this->session->userdata('user_id') == $reply[4] ? 'You' : $reply[0] ?></strong> at <strong><?= $reply[2] ?></strong></span>
             <p><?= $reply[1] ?></p>
         </div>
         <?php } ?>
