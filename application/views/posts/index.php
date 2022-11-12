@@ -1,3 +1,4 @@
+<a href="/logout">Logout</a>
 <form action="" method="post" id="default-form" class="hidden" data-target="#">
     <input type="hidden" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>">
     <textarea name="form[content]"></textarea>
