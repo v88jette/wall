@@ -1,6 +1,6 @@
 <?php
 
-class User extends CI_Model {
+class Account extends CI_Model {
 
 	/**
 	 * DOCU: This function will process the login form

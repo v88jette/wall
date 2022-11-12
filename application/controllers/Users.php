@@ -38,7 +38,7 @@ class Users extends Sessions {
 	 * @author: v88jet
 	 */
 	public function process_login(){
-		$result = $this->user->process_login([]);
+		$result = $this->account->process_login([]);
 		redirect('/');
 	}
 
@@ -48,7 +48,7 @@ class Users extends Sessions {
 	 * @author: v88jet
 	 */
 	public function process_signup(){
-		$result = $this->user->process_signup([]);
+		$result = $this->account->process_signup([]);
 		redirect('/');
 	}
 }
