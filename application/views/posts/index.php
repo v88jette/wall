@@ -28,9 +28,9 @@ foreach($posts['result'] as $post){ ?>
             <span>Posted by <strong><?= $reply[0] ?></strong> at <strong><?= $reply[2] ?></strong></span>
             <p><?= $reply[1] ?></p>
         </div>
-        <div data-action="reply/<?= $post['id'] ?>" id="reply-form" class="reply-form" data-target="reply-form-<?= $post['id'] ?>">
-            <textarea placeholder="Say something nice"></textarea>
-            <button>Reply</button>
-        </div>
-    <?php } ?>
+        <?php } ?>
+<div data-action="reply/<?= $post['id'] ?>" id="reply-form" class="reply-form" data-target="reply-form-<?= $post['id'] ?>">
+    <textarea placeholder="Say something nice"></textarea>
+    <button>Reply</button>
+</div>
 <?php } ?>

@@ -9,7 +9,7 @@ class Replies extends Sessions {
 	 * @author: v88jet
 	 */
 	public function create($post_id){
-		$result = $this->reply->create([]);
+		$result = $this->reply->create(['user_id' => $this->session->userdata('user_id'), 'post_id' => $post_id, 'content' => $this->input->post('form')['content']]);
 		$this->load->view('partials/_reply', ['reply' => $result]);
 	}
 }

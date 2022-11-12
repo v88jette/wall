@@ -22,7 +22,7 @@ class Reply extends CI_Model {
                 'user_id'       => $data['user_id'],
                 'id'            => $id,
                 'content'       => $data['content'],
-                'created_at'    => mdate('%M %d %Y'),
+                'created_at'    => gmdate('M d Y'),
                 'author'        => 'You',
                 'post_id'       => $data['post_id']
             ];
