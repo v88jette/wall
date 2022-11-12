@@ -3,8 +3,8 @@
     <input type="text" name="form[fname]" placeholder="Enter first name">
     <input type="text" name="form[lname]" placeholder="Enter last name">
     <input type="text" name="form[email]" placeholder="Enter email address">
-    <input type="text" name="form[password]" placeholder="Enter password">
-    <input type="text" name="form[confirm_password]" placeholder="Enter confirm password">
+    <input type="password" name="form[password]" placeholder="Enter password">
+    <input type="password" name="form[confirm_password]" placeholder="Enter confirm password">
     <input type="submit" value="Sign up">
     <a href="/login">Login here</a>
 </form>
