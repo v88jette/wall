@@ -40,6 +40,18 @@ class Post extends CI_Model {
 	public function create($data){
         $result = ['status' => true, 'result' => null, 'message' => ''];
         try{
+            foreach($data as $key => $value){
+                if($value === ''){
+                    throw new Exception('Has missing input');
+                }
+                if($this->security->xss_clean($value, TRUE) === FALSE){
+                    throw new Exception('Has suspicious input');
+                }
+            }
+            if(strlen($data['content']) < 5){
+                throw new Exception('Post is too short. It must have at least 5 characters');
+            }
+
             $insert_query = "INSERT INTO `wall`.`posts` (`user_id`, `content`) VALUES (?, ?)";
             $run_query = $this->db->query($insert_query, $data);
             
