@@ -41,6 +41,9 @@ class Post extends CI_Model {
         $result = ['status' => true, 'result' => null, 'message' => ''];
         try{
             foreach($data as $key => $value){
+                if($key === 'content' && $value === ''){
+                    throw new Exception('Post is required');
+                }
                 if($value === ''){
                     throw new Exception('Has missing input');
                 }

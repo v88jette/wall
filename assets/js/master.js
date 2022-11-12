@@ -7,7 +7,7 @@ $(document).ready(function(){
             form.attr('action', '');
             form.attr('data-target', '');
             $('textarea').val('');
-            $('.error').fadeOut(2000, function(){
+            $('.error').fadeOut(3000, function(){
                 $('.error').remove();
             });
         });
