@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+define('EMAIL_REGEX', "/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/");
+define('NAME_REGEX', "/^[a-zA-Z]{2,10}$/");
+define('SECRET_KEY', "b@conp4nc4k3s ");
+
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

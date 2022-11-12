@@ -18,7 +18,7 @@ class Reply extends CI_Model {
                     throw new Exception('Has missing input');
                 }
                 if($this->security->xss_clean($value, TRUE) === FALSE){
-                    throw new Exception('Has suspicious input');
+                    throw new Exception('You enterned a suspicious input');
                 }
             }
             if(strlen($data['content']) < 5){

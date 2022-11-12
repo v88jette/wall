@@ -38,7 +38,12 @@ class Users extends Sessions {
 	 * @author: v88jet
 	 */
 	public function process_login(){
-		$result = $this->account->process_login([]);
+		$result = $this->account->process_login(['email' => $this->input->post('form')['email'], 'password' => $this->input->post('form')['password']]);
+		if(!$result['status']){
+			$this->session->set_flashdata('error', $result['message']);
+		}else{
+			$this->session->set_userdata('user_id', $result['result']);
+		}
 		redirect('/');
 	}
 
