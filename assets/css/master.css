@@ -3,6 +3,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: .8rem;
     font-weight: 200;
+    width: fit-content;
 }
 .error{
     color: red;
@@ -17,6 +18,9 @@ body{
         strong {
             font-weight: 400;
         }
+    button{
+        margin-bottom: 8px;
+    }
 .post{
     background-color: antiquewhite;
 }
@@ -34,6 +38,7 @@ body{
     }
 .reply{
     background-color: whitesmoke;
+    margin-left: 35px;
 }
     .reply-form>button{
         background-color: antiquewhite;
@@ -47,3 +52,4 @@ body{
     padding: 8px;
     margin-bottom: 8px;
 }
+

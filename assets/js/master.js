@@ -3,6 +3,13 @@ $(document).ready(function(){
         const form = $(this);
         $.post(form.attr('action'), form.serialize(), function(output){
             $(form.attr('data-target')).after(output);
+        }).always(function(){
+            form.attr('action', '');
+            form.attr('data-target', '');
+            $('textarea').val('');
+            $('.error').fadeOut(2000, function(){
+                $('.error').remove();
+            });
         });
         return false;
     });

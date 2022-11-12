@@ -30,7 +30,7 @@ class Posts extends Sessions {
 	 * @author: v88jet
 	 */
 	public function create(){
-		$result = $this->post->create([]);
+		$result = $this->post->create(['user_id' => $this->session->userdata('user_id'), 'content' => $this->input->post('form')['content']]);
 		$this->load->view('partials/_post', ['post' => $result]); 
 	}
 }
