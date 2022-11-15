@@ -21,4 +21,19 @@ body{
     button{
         margin-bottom: 8px;
     }
-
+.reply_form, .delete_reply_form, .reply {
+    margin-left: 25px;
+}
+    .reply_form input[type=submit]{
+        background-color: green;
+        color: white;
+    }
+    .delete_form input[type=submit]{
+        background-color: red;
+        color: white;
+    }
+    .post span, .reply span {
+        font-weight: bold;
+        font-style: italic;
+    }
+    
