@@ -13,8 +13,4 @@ $route['process_signup']    = 'users/process_signup';
 
 # post routes
 $route['home']              = 'posts/index';
-$route['post']              = 'posts/create';
 $route['logout']            = 'posts/logout';
-
-# reply routes
-$route['reply/(:any)'] = 'replies/create/$1';

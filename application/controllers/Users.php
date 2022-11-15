@@ -13,30 +13,14 @@ class Users extends Sessions {
 		}
 	}
 
-
-	/**
-	 * DOCU: This function will render the login page
-	 * Created at: Nov 1 2022
-	 * @author: v88jet
-	 */
 	public function index(){
 		$this->load_view('users/index');
 	} 
 
-	/**
-	 * DOCU: This function will render the signup page
-	 * Created at: Nov 1 2022
-	 * @author: v88jet
-	 */
 	public function signup(){
 		$this->load_view('users/signup');
 	}
 
-	/**
-	 * DOCU: This function will process the login form
-	 * Created at: Nov 1 2022
-	 * @author: v88jet
-	 */
 	public function process_login(){
 		$result = $this->account->process_login(['email' => $this->input->post('form')['email'], 'password' => $this->input->post('form')['password']]);
 		if(!$result['status']){
@@ -47,11 +31,6 @@ class Users extends Sessions {
 		redirect('/');
 	}
 
-	/**
-	 * DOCU: This function will process the signup form
-	 * Created at: Nov 1 2022
-	 * @author: v88jet
-	 */
 	public function process_signup(){
 		$result = $this->account->process_signup([
 			'fname' 			=> $this->input->post('form')['fname'], 

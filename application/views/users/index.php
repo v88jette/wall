@@ -4,5 +4,4 @@
     <input type="password" name="form[password]" placeholder="Enter password">
     <input type="submit" value="Login">
     <a href="/signup">Register here</a>
-
 </form>

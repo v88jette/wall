@@ -21,35 +21,4 @@ body{
     button{
         margin-bottom: 8px;
     }
-.post{
-    background-color: antiquewhite;
-}
-    .post-form>button{
-        color: white;
-        background-color: green;
-    }
-    .post->p, .reply->p {
-        margin: 8px;
-    }
-    .post, .reply {
-        border: 1px dotted black;
-        padding: 8px;
-        margin-bottom: 8px;
-    }
-.reply{
-    background-color: whitesmoke;
-    margin-left: 35px;
-}
-    .reply-form>button{
-        background-color: antiquewhite;
-        color: black;
-    }
-    .reply-form, .reply, .reply-error {
-        margin-left: 35px;
-    }
-.reply, .post{
-    border: 1px dotted black;
-    padding: 8px;
-    margin-bottom: 8px;
-}
 
