@@ -36,6 +36,13 @@ class Post extends CI_Model {
         try{
             $result = ['status'=>true, 'result'=>[], 'message'=>'Success'];
 
+            if ($post['content'] === '' || strlen($post['content']) < 5){
+                throw new Exception('Content for reply is missing or too short, must have at least 5 letters');
+            }
+            if ($this->security->xss_clean($post['content'], TRUE) === FALSE){
+                throw new Exception('You enterned a suspicious input');
+            }
+
             $insert_query = "INSERT INTO `posts` (`user_id`, `content`) VALUES (?, ?)";
             $query_result = $this->db->query($insert_query, [$user_id, $post['content']]);
             

@@ -8,9 +8,6 @@ body{
 .error{
     color: red;
 }
-.hidden{
-    display: none;
-}
     input, textarea {
         display: block;
         margin: 8px 0;

@@ -9,5 +9,5 @@
     <script src="assets/js/master.js"></script>
 </head>
 <body>
-<p class="error"><?= $this->session->userdata('error') ?></p>
+<p class="error"><?= $this->session->flashdata('error') ?></p>
     

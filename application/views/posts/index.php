@@ -3,7 +3,7 @@
 <h1>Posts</h1>
 <form action="post" method="post" class="post_form">
     <input type="hidden" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>">
-    <textarea name="content" placeholder="Reply something"></textarea>
+    <textarea name="content" placeholder="Post something"></textarea>
     <input type="submit" value="Post">
 </form>
 <?php 
