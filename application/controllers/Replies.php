@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Posts extends Sessions {
+class Replies extends Sessions {
 
 	public function __construct(){
 		parent::__construct();
@@ -14,13 +14,8 @@ class Posts extends Sessions {
 		}
 	}
 
-	public function index(){
-		$result = $this->post->get_all_records();
-		$this->load_view('posts/index', ['posts' => $result]);
-	}
-
 	public function create(){
-		$result = $this->post->create($this->user, $this->input->post());
+		$result = $this->reply->create($this->user, $this->input->post());
 
 		if (!$result['status']){
 			$this->session->set_flashdata('error', $result['message']);
@@ -30,7 +25,7 @@ class Posts extends Sessions {
 	}
 
 	public function destroy(){
-		$result = $this->post->destroy($this->input->post('post_id'));
+		$result = $this->reply->destroy($this->input->post('reply_id'));
 
 		if (!$result['status']){
 			$this->session->set_flashdata('error', $result['message']);
